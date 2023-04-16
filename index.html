@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аллегория - профессиональные юридические и бухгалтерские услуги в Алмате</title>
-    <meta name="description" content="Мы предоставляем юридическое сопровождение и бухгалтерские услуги для бизнеса и частных лиц в Алматы уже более 15 лет. Наша команда квалифицированных юристов и бухгалтеров готова помочь вам в решении различных задач - от простых договоров до сложных многосторонних сделок. Мы гарантируем профессиональный и качественный сервис, который поможет организовать грамотную работу вашего бизнеса. С нами вы можете быть уверены в решении своей проблемы в 100% случаев. Обращайтесь к нам и получите оптимальное решение своих задач уже сегодня!">
+    <meta name="description"
+        content="Мы предоставляем юридическое сопровождение и бухгалтерские услуги для бизнеса и частных лиц в Алматы уже более 15 лет. Наша команда квалифицированных юристов и бухгалтеров готова помочь вам в решении различных задач - от простых договоров до сложных многосторонних сделок. Мы гарантируем профессиональный и качественный сервис, который поможет организовать грамотную работу вашего бизнеса. С нами вы можете быть уверены в решении своей проблемы в 100% случаев. Обращайтесь к нам и получите оптимальное решение своих задач уже сегодня!">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <main class="main">
         <div class="container">
-            <p class="descr">Работаем уже более 15 лет</p>
+            <p class="main__descr">Работаем уже более 15 лет</p>
             <h1>Юридические и бухгалтерские услуги для людей и бизнеса</h1>
             <div class="row">
                 <a href="#" class="btn">Заказать звонок</a>
@@ -22,22 +23,25 @@
             <div class="wrap feature-wrap">
                 <div class="feature">
                     <p class="feature__heading">Бухгалтерские услуги</p>
-                    <p>Наша компания имеет большой опыт работы в области бухгалтерского и налогового учета.</p>
+                    <p class="feature__text">Наша компания имеет большой опыт работы в области бухгалтерского и налогового учета.</p>
                 </div>
                 <div class="feature">
                     <p class="feature__heading">Юридические услуги</p>
-                    <p>Оказание юридического сопровождения по результатам проектов — от составления простых договоров до
+                    <p class="feature__text">Оказание юридического сопровождения по результатам проектов — от составления простых договоров до
                         структурирования комплексных многосторонних сторон.</p>
                 </div>
             </div>
         </div>
+        <img src="./img/main.jpg" class="main__bg" alt="Юридические и бухгалтерские услуги">
     </main>
 
     <section class="about">
         <div class="container wrap">
-            <div class="about-imgs">
-                <img src="img/item-1.jpg" alt="img"><img src="img/item-2.jpg" alt="img"><img src="img/item-3.jpg"
-                    alt="img"><img src="img/item-4.jpeg" alt="img">
+            <div class="about-img wrap">
+                <img src="img/item-1.jpg" loading="lazy" alt="img">
+                <img src="img/item-2.jpg" loading="lazy" alt="img">
+                <img src="img/item-3.jpg" loading="lazy" alt="img">
+                <img src="img/item-4.jpeg" loading="lazy" alt="img">
             </div>
             <div class="about-title">
                 <h2>О компании <br> Аллегория</h2>
@@ -51,7 +55,69 @@
         </div>
     </section>
 
-    <a href="#main" class="scroll-up"></a>
+    <section class="services">
+        <div class="container wrap">
+            <div class="services-item">
+                <img src="./img/item-5.jpg" alt="">
+                <h2>Бухгалтерские услуги</h2>
+                <p>Грамотное ведение финансовой деятельности предприятия или индивидуального предпринимателя позволяет
+                    избежать штрафов при проверке отчетности и визитах инспекторов</p>
+                <a href="./accounting.html" class="btn rounded">Узнать подробнее</a>
+            </div>
+            <div class="services-item">
+                <img src="./img/item-6.jpg" alt="">
+                <h2>Юридические услуги</h2>
+                <p>Оказываем юридическое сопровождение по отдельным проектам — от составления простых договоров до
+                    структурирования комплексных многосторонних сделок.</p>
+                <a href="./accounting.html" class="btn rounded">Узнать подробнее</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="work">
+        <div class="container">
+            <h2>Как с нами поработать</h2>
+            <div class="work-item">
+                <h3>Выявление проблемы</h3>
+                <p>Мы тщательно анализируем ситуацию вашего запроса</p>
+            </div>
+            <div class="work-item">
+                <h3>Командное обсуждение</h3>
+                <p>Готовим для вас оптимальное решение ваших проблем и назначаем сроки исполнения</p>
+            </div>
+            <div class="work-item">
+                <h3>Заключение договора</h3>
+                <p>Команда квалифицированных юристов и бухгалтеров готова приступить к работе</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Мы поможем решить вашу проблему</h2>
+            <p>В 100% дел мы уверены в решении и можем довести дело до конца</p>
+            <form action="#">
+                <input type="tel" placeholder="Номер телефона" required>
+                <input type="text" placeholder="ФИО" required>
+                <button class="btn btn-3">Получить бесплатную консультацию</button>
+            </form>
+            <p class="secure">Ваши данные в полной безопасности</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="wrap">
+                <a href="#"><img src="img/fb.svg" loading="lazy" alt="fb"></a>
+                <a href="#"><img src="img/inst.svg" loading="lazy" alt="fb"></a>
+            </div>
+            <p>
+                Телефон: <a href="tel:+77016180888">+7 701 618 0888</a> <br>
+                E-mail: <a href="mailto:allegoriya.too@mail.ru">allegoriya.too@mail.ru</a>
+            </p>
+        </div>
+    </footer>
+
 
     <script src="./js/jquery-3.4.1.min.js" defer></script>
     <script src="./js/scripts.js" defer></script>

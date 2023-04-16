@@ -3,18 +3,14 @@
 @import 'header'
 @import 'footer'
 
-.main 
+.main
     position: relative
     z-index: 1
     display: flex
     align-items: center
     justify-content: center
     min-height: 100vh
-    background-image: url('../img/main.jpg')
-    background-repeat: no-repeat
-    background-position: center center
-    background-size: cover
-    padding-top: 80px
+    padding: 80px 0
     &::before
         content: ''
         display: block
@@ -25,22 +21,449 @@
         left: 0
         background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,1))
         z-index: -1
-    h1 
+        pointer-events: none
+
+    h1
         max-width: 620px
         margin-bottom: 30px
-        
-    .row 
-        margin-bottom: 30px
+
+    &__descr
+        font-size: 20px
+
+    .row
+        margin-bottom: 60px
+        .btn-2
+            margin-left: 15px
 
     .feature
-        max-width: 40%
-        &__heading 
+        max-width: 58%
+        &:first-child
+            max-width: 35%
+
+        &__heading
             background-image: url('../img/check.svg')
             background-repeat: no-repeat
             background-size: 20px 20px
-            background-position: top 2px left 
+            background-position: top 2px left
             padding-left: 30px
             margin: 0 0 20px
+            font-weight: 700
 
         &-wrap
-            align-items: flex-start 
+            align-items: flex-start
+            max-width: 950px
+        &__text
+            font-weight: 300
+            margin: 0
+
+    &__bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1000
+        object-fit: cover
+        pointer-events: none
+
+    &.second
+        padding: 120px 0 80px
+
+        h1
+            max-width: 1040px
+
+        .feature
+            max-width: 48%
+            &-wrap
+                max-width: 750px
+
+.about
+    &-img,
+    &-title
+        max-width: 47%
+    &-title
+        p
+            font-size: 20px
+
+    &-img
+        row-gap: 10px
+        img
+            width: 49%
+            aspect-ratio: 1/1
+            object-fit: cover
+
+.services
+    text-align: center
+    padding: 90px 0
+    .container
+        align-items: stretch
+    &-item
+        max-width: 48%
+        border: 2px solid rgba(255, 255, 255, .2)
+        padding: 60px 55px 120px
+        border-radius: 10px
+        transition: .3s ease all
+        position: relative
+        z-index: 1
+        h2
+            font-size: 30px
+            margin-bottom: 15px
+        p
+            margin-bottom: 30px
+
+        img
+            width: 110px
+            height: 110px
+            display: block
+            margin: 0 auto 30px
+            border-radius: 50%
+            object-fit: cover
+        &:hover
+            box-shadow: 0 2px 30px 0px rgba(0, 0, 0, 1)
+
+        .btn
+            position: absolute
+            bottom: 50px
+            left: 50%
+            transform: translateX(-50%)
+
+.work
+    padding: 150px 0
+    h2
+        text-align: center
+        margin-bottom: 60px
+
+    .container
+        max-width: 781px
+
+    &-item
+        width: 360px
+        max-width: 50.3%
+        padding-right: 40px
+        text-align: right
+        position: relative
+        &::after
+            content: ''
+            display: block
+            width: 2px
+            height: 100%
+            background-color: #fff
+            position: absolute
+            bottom: -24px
+            right: 0
+        &::before
+            content: ''
+            display: block
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background-color: #000
+            position: absolute
+            z-index: 1
+            top: 0
+            right: -10px
+            border: 2px solid #fff
+
+        h3
+            font-size: 20px
+
+        p
+            font-size: 15px
+            margin: 0
+
+        &:nth-of-type(even)
+            text-align: left
+            padding: 0 0 0 40px
+            margin: 0 0 0 auto
+            &::after
+                right: auto
+                left: 0
+            &::before
+                right: auto
+                left: -10px
+
+        &:last-of-type::after
+            display: none
+
+.contact
+    text-align: center
+    position: relative
+    z-index: 1
+    background-image: url('../img/bg.jpg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    padding: 220px 0
+    &::before
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7))
+        z-index: -1
+    form
+        max-width: 560px
+        margin: 80px auto 40px
+
+.info
+    padding: 140px 0
+    background-color: #fff
+    @media screen and ( min-width: 640px )
+        p
+            font-size: 20px
+            color: #000
+    .title
+        width: 40%
+        margin: 0 auto
+        p
+            margin: 0
+
+    img
+        width: 46%
+        display: block
+
+.ditails
+    text-align: center
+    padding: 180px 0
+    &__text
+        max-width: 700px
+        font-size: 20px
+        margin: 0 auto 80px
+    img
+        width: 32%
+        object-fit: cover
+        aspect-ratio: 1/1
+
+    .wrap
+        margin-bottom: 140px
+
+    &.second
+        h2
+            margin-bottom: 60px
+
+.contacts
+    padding: 0
+    background-color: rgba(255, 255, 255, .05)
+
+    &__img
+        height: 100%
+        max-height: 100vh
+        object-fit: cover
+    &__img,
+    &-title
+        width: 50%
+    &-title
+        padding: 5%
+
+    input
+        background-color: transparent
+        color: #fff
+        padding: 0
+        border-radius: 0
+        border: none
+        border-bottom: 1px solid rgba(255, 255, 255, .5)
+        &::placeholder
+            color: rgba(255, 255, 255, .5)
+
+    .btn
+        width: unset
+        margin-top: 30px
+
+@media screen and (max-width: 1199px)
+    .main
+        h1
+            margin-bottom: 50px
+        .row
+            margin-bottom: 70px
+
+        .feature
+            max-width: 48% !important
+            &__text
+                font-size: 14px
+
+            &-wrap
+                max-width: 69%
+
+        &.second 
+            h1 
+                font-size: 40px
+
+            .feature
+                &-wrap 
+                    max-width: 690px
+
+    .about
+        &-title
+            p
+                font-size: 18px
+
+    .services
+        &-item
+            max-width: 100%
+            width: 49%
+            padding: 60px 35px 120px
+            h2
+                font-size: 22px
+
+            .btn
+                white-space: nowrap
+
+    .work
+        &-item
+            p
+                font-size: 14px
+
+@media screen and (max-width: 959px)
+    .main
+        padding: 120px 0
+        .feature
+            max-width: 460px !important
+            margin: 0 0 50px
+            &:last-of-type
+                margin-bottom: 0
+            &__heading
+                margin-bottom: 12px
+            &__text
+                font-size: 14px
+
+            &-wrap
+                max-width: 100%
+                display: block
+
+    .about
+        .container
+            display: block
+
+        &-title,
+        &-img
+            max-width: 100%
+            width: 100%
+        &-img
+            margin-bottom: 30px
+
+    .services
+        .container
+            display: block
+        &-item
+            width: 100%
+            padding: 60px 35px
+            margin-bottom: 30px
+            &:last-child
+                margin-bottom: 0
+            .btn
+                position: static
+                transform: none
+
+    .work
+        .container
+            max-width: 664px
+
+    .ditails
+        &__text
+            font-size: 18px
+            margin-bottom: 70px
+        .wrap
+            display: block
+            img
+                width: 360px
+                height: 360px
+                display: block
+                margin: 0 auto 20px
+
+@media screen and (max-width: 639px)
+    .main
+        .container
+            max-width: 460px
+
+        &__descr
+            font-size: 18px
+            margin-bottom: 18px
+
+        .row
+            display: flex
+            justify-content: space-between
+
+        h1
+            margin-bottom: 30px
+
+        .btn
+            width: 48%
+            min-width: unset
+            font-size: 14px
+            margin: 0 !important
+
+        .feature
+            &__heading
+                font-size: 14px
+                background-position: top left
+            &__text
+                font-size: 12px
+
+        &.second 
+            h1 
+                font-size: 20px
+
+    .about
+        &-title
+            p
+                font-size: 16px
+
+    .services
+        &-item
+            padding: 50px 25px
+            .btn
+                padding: 16px 35px 14px
+
+    .work
+        &-item
+            h3
+                font-size: 18px
+                margin-bottom: 10px
+
+            p
+                font-size: 12px
+
+@media screen and (max-width: 509px)
+    .main
+        .container
+            max-width: 332px
+
+        .row
+            display: block
+            margin-bottom: 30px
+            .btn
+                width: unset
+                min-width: 200px
+                margin-bottom: 15px !important
+
+    .work
+        &-item
+            padding: 0 0 30px 20px
+            text-align: left
+            width: 100%
+            max-width: 100%
+            &::before
+                width: 12px
+                height: 12px
+                border-width: 1px
+                left: 0 !important
+
+            &::after
+                width: 1px
+                left: 6px !important
+                bottom: -12px
+
+            &:nth-of-type(even)
+                padding: 0 0 30px 20px
+                margin: 0
+
+    .contact
+        .container
+            max-width: 376px
+
+    .ditails
+        &__text
+            font-size: 16px
