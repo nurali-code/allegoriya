@@ -211,6 +211,7 @@
 .info
     padding: 140px 0
     background-color: #fff
+    color: #000
     @media screen and ( min-width: 640px )
         p
             font-size: 20px
@@ -287,12 +288,13 @@
             &-wrap
                 max-width: 69%
 
-        &.second 
-            h1 
+        &.second
+            h1
                 font-size: 40px
+                max-width: 798px
 
             .feature
-                &-wrap 
+                &-wrap
                     max-width: 690px
 
     .about
@@ -373,6 +375,24 @@
                 display: block
                 margin: 0 auto 20px
 
+    .info 
+        padding: 90px 0
+        .container 
+            display: block
+
+        .title
+            margin-bottom: 25px
+        .title,
+        img 
+            width: 100%
+
+    .contacts 
+        &-title,
+        &__img
+            width: 100%
+        &-title
+            padding: 30px 30px 60px
+
 @media screen and (max-width: 639px)
     .main
         .container
@@ -402,8 +422,8 @@
             &__text
                 font-size: 12px
 
-        &.second 
-            h1 
+        &.second
+            h1
                 font-size: 20px
 
     .about
