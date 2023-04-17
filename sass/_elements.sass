@@ -256,6 +256,7 @@ select
         font-size: 22px
         line-height: 1.35
         font-weight: 600
+
         &::before
             content: ''
             display: inline-block
@@ -269,6 +270,7 @@ select
             top: 50%
             transform: translateY(-50%) rotate(0deg)
             border-radius: 50%
+            transition: all ease .3s
             background-image: url('../img/close.svg')
 
         &.active::before
@@ -276,14 +278,33 @@ select
             background-color: #eee
 
     &-content
-        padding: 0 30px 20px
-        display: none
+        padding: 0
+        max-height: 0
+        text-align: left
+        opacity: 0
+        transition: all ease .3s
+        p
+            margin: 0
+        &.active
+            opacity: 1
+            padding: 0 30px 20px
+            max-height: 750px
 
     p, li
         font-size: 14px
         line-height: 1.55
         font-weight: 300
         margin: 0
+
+#progress-bar
+    position: fixed
+    top: 0
+    left: 0
+    height: 4px
+    border-radius: 4px
+    z-index: 99999
+    background-color: blue
+    transition: width .6s ease
 
 @media screen and (max-width: 1199px)
     h1
@@ -312,7 +333,7 @@ select
         border-radius: 6px
 
     .dropdown
-        &-btn 
+        &-btn
             font-size: 20px
             padding: 20px 50px 20px 20px
             &::before

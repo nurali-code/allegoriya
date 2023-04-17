@@ -248,7 +248,6 @@
 .contacts
     padding: 0
     background-color: rgba(255, 255, 255, .05)
-
     &__img
         height: 100%
         max-height: 100vh
@@ -256,6 +255,7 @@
     &__img,
     &-title
         width: 50%
+    
     &-title
         padding: 5%
 
@@ -387,11 +387,18 @@
             width: 100%
 
     .contacts 
+        overflow: hidden
+        &__img
+            height: 100vw
+            aspect-ratio: 1/1
         &-title,
         &__img
             width: 100%
         &-title
-            padding: 30px 30px 60px
+            padding: 30px 30px 90px
+
+        h2 
+            margin-bottom: 18px
 
 @media screen and (max-width: 639px)
     .main

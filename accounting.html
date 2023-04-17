@@ -168,7 +168,7 @@
     <section class="contacts wrap">
         <img src="img/contacts.jpg" alt="контактные данные" class="contacts__img">
         <div class="contacts-title">
-            <h2>Оставьте ваши контактные данные</h2>
+            <h2>Оставьте ваши <br> контактные данные</h2>
             <p>Мы поможем решить вашу проблему. Оставьте заявку для бесплатной консультации</p>
             <form action="#">
                 <input type="tel" placeholder="Номер телефона" required>
@@ -191,9 +191,45 @@
         </div>
     </footer>
 
+    <div id="progress-bar"></div>
 
-    <script src="./js/jquery-3.4.1.min.js" defer></script>
-    <script src="./js/scripts.js" defer></script>
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown');
+        dropdownItems.forEach(item => {
+            const btn = item.querySelector('.dropdown-btn');
+            const content = item.querySelector('.dropdown-content');
+            btn.addEventListener('click', () => {
+                // Закрываем все панели аккордеона
+                dropdownItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.dropdown-btn').classList.remove('active');
+                        otherItem.querySelector('.dropdown-content').classList.remove('active');
+                    }
+                });
+                // Открываем или закрываем панель аккордеона
+                btn.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+        // Получаем высоту документа и видимую высоту окна
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        // Определяем начальное значение полосы прогресса
+        let progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = '0%';
+
+        // Обновляем значение полосы прогресса при прокрутке
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+            progressBar.style.width = `${progress}%`;
+        });
+
+    </script>
+
+
 
 </body>
 

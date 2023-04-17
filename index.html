@@ -23,11 +23,13 @@
             <div class="wrap feature-wrap">
                 <div class="feature">
                     <p class="feature__heading">Бухгалтерские услуги</p>
-                    <p class="feature__text">Наша компания имеет большой опыт работы в области бухгалтерского и налогового учета.</p>
+                    <p class="feature__text">Наша компания имеет большой опыт работы в области бухгалтерского и
+                        налогового учета.</p>
                 </div>
                 <div class="feature">
                     <p class="feature__heading">Юридические услуги</p>
-                    <p class="feature__text">Оказание юридического сопровождения по результатам проектов — от составления простых договоров до
+                    <p class="feature__text">Оказание юридического сопровождения по результатам проектов — от
+                        составления простых договоров до
                         структурирования комплексных многосторонних сторон.</p>
                 </div>
             </div>
@@ -117,10 +119,48 @@
             </p>
         </div>
     </footer>
+    <div id="progress-bar"></div>
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown');
+
+        dropdownItems.forEach(item => {
+            const btn = item.querySelector('.dropdown-btn');
+            const content = item.querySelector('.dropdown-content');
+
+            btn.addEventListener('click', () => {
+                // Закрываем все панели аккордеона
+                dropdownItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.dropdown-btn').classList.remove('active');
+                        otherItem.querySelector('.dropdown-content').classList.remove('active');
+                    }
+                });
+
+                // Открываем или закрываем панель аккордеона
+                btn.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+        // Получаем высоту документа и видимую высоту окна
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        // Определяем начальное значение полосы прогресса
+        let progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = '0%';
+
+        // Обновляем значение полосы прогресса при прокрутке
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+            progressBar.style.width = `${progress}%`;
+        });
 
 
-    <script src="./js/jquery-3.4.1.min.js" defer></script>
-    <script src="./js/scripts.js" defer></script>
+
+    </script>
 
 </body>
 
