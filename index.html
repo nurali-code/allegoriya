@@ -123,13 +123,30 @@
     </footer>
     <div id="progress-bar"></div>
 
-    <script>
-        const dropdownItems = document.querySelectorAll('.dropdown');
+    <div class="wg">
+        <div id="wg-content" class="wg-content">
+            <a href="tel:+77016180888"><img src="img/phone.svg" alt="Телефон"></a>
+            <a href="skype:username?call" target="_blank"><img src="img/sk.svg" alt="Скайп"></a>
+            <a href="https://vk.me/username" target="_blank"><img src="img/vk.svg" alt="Вконтакте"></a>
+            <a href="https://wa.me/77016180888" target="_blank"><img src="img/wa.svg" alt="Whatsapp"></a>
+            <a href="https://t.me/allegoriya" target="_blank"><img src="img/tg.svg" alt="Телеграм"></a>
+            <a href="mailto:allegoriya.too@mail.ru"><img src="img/email.svg" alt="Почта"></a>
+        </div>
+        <button class="wg-btn" id="wg-btn"></button>
+    </div>
 
+    <script>
+        const wgBtn = document.querySelector('#wg-btn');
+        const wgContent = document.querySelector('#wg-content');
+        wgBtn.addEventListener('click', () => {
+            wgContent.classList.toggle('active');
+            wgBtn.classList.toggle('active');
+        })
+
+        const dropdownItems = document.querySelectorAll('.dropdown');
         dropdownItems.forEach(item => {
             const btn = item.querySelector('.dropdown-btn');
             const content = item.querySelector('.dropdown-content');
-
             btn.addEventListener('click', () => {
                 // Закрываем все панели аккордеона
                 dropdownItems.forEach(otherItem => {
@@ -138,7 +155,6 @@
                         otherItem.querySelector('.dropdown-content').classList.remove('active');
                     }
                 });
-
                 // Открываем или закрываем панель аккордеона
                 btn.classList.toggle('active');
                 content.classList.toggle('active');
@@ -159,8 +175,6 @@
             const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
             progressBar.style.width = `${progress}%`;
         });
-
-
 
     </script>
 

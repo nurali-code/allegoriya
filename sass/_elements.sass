@@ -256,33 +256,35 @@ select
         font-size: 22px
         line-height: 1.35
         font-weight: 600
+        transform: none !important
 
         &::before
             content: ''
             display: inline-block
             width: 40px
             height: 40px
-            background-size: 60%
+            background-size: 80%
             background-position: center center
             background-repeat: no-repeat
             position: absolute
             right: 20px
             top: 50%
-            transform: translateY(-50%) rotate(0deg)
+            transform-origin: 50% 50%
+            transform: translateY(-50%) rotate(45deg)
             border-radius: 50%
-            transition: all ease .3s
+            transition: all ease .4s
             background-image: url('../img/close.svg')
 
         &.active::before
-            transform: translateY(-50%) rotate(45deg)
+            transform: translateY(-50%) rotate(0deg)
             background-color: #eee
 
     &-content
-        padding: 0
+        padding: 0 30px
         max-height: 0
         text-align: left
         opacity: 0
-        transition: all ease .3s
+        transition: all ease .5s
         p
             margin: 0
         &.active
@@ -305,6 +307,68 @@ select
     z-index: 99999
     background-color: blue
     transition: width .6s ease
+    pointer-events: none
+
+.wg
+    list-style: none
+    position: fixed
+    bottom: 40px
+    right: 40px
+    z-index: 99999
+    text-align: center
+    &-btn
+        background-color: #00b2f0
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%)
+        opacity: 1 !important
+        background-image: url('../img/chat.svg')
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: 45%
+        &.active
+            background-color: #fff
+            background-image: url('../img/close.svg')
+            background-size: 60%
+    
+    a
+        display: block
+        width: 48px
+        height: 48px
+        margin: 0 auto 15px
+        border-radius: 50%
+        transition: all 0.3s ease-in-out
+        background-color: #fff
+        // box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%)
+        transform: translateY(100%)
+    
+    img
+        display: block
+        transform: scale(1.05)
+        transform-origin: 50% 12%
+
+    &-content
+        transform: scale(.5)
+        transform-origin: 50% 100%
+        transition: all .3s ease-in-out
+        max-height: 60px
+        overflow: hidden
+        visibility: hidden
+        position: absolute
+        bottom: 20px
+        width: 100%
+        padding-bottom: 50px
+        z-index: -1
+        opacity: 0
+        &.active
+            opacity: 1
+            max-height: 500px
+            // overflow: visible
+            visibility: visible
+            transform: scale(1)
+            a
+                transform: translateY(0%)
 
 @media screen and (max-width: 1199px)
     h1
@@ -342,3 +406,7 @@ select
 @media screen and (max-width: 500px)
     .container
         padding: 0 16px
+
+    .wg
+        bottom: 20px
+        right: 20px
