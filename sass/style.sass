@@ -24,7 +24,7 @@
         pointer-events: none
 
     h1
-        max-width: 620px
+        max-width: 750px
         margin-bottom: 30px
 
     &__descr
@@ -242,28 +242,35 @@
         margin-bottom: 140px
 
     &.second
+        .ditails
+            &__text
+                margin: 30px auto 0
         h2
             margin-bottom: 60px
 
 .contacts
     padding: 0
     background-color: rgba(255, 255, 255, .05)
+    align-items: stretch
     &__img
-        height: 100%
         max-height: 100vh
         object-fit: cover
     &__img,
     &-title
         width: 50%
-    
+
     &-title
-        padding: 5%
+        padding: 8% 5%
+
+    p 
+        max-width: 480px
 
     input
         background-color: transparent
         color: #fff
         padding: 0
         border-radius: 0
+        max-width: 500px
         border: none
         border-bottom: 1px solid rgba(255, 255, 255, .5)
         &::placeholder
@@ -272,6 +279,39 @@
     .btn
         width: unset
         margin-top: 30px
+
+.article
+    background-image: url('../img/article.jpg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    position: relative
+    z-index: 1
+    &::before
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,1))
+        z-index: -1
+        pointer-events: none
+        opacity: .7
+
+    p 
+        font-weight: 500
+    
+    .col
+        width: 40%
+        &:last-child
+            width: 48%
+
+    .box
+        background-color: #4f4f4f
+        padding: 40px
+        font-weight: 400
 
 @media screen and (max-width: 1199px)
     .main
@@ -375,18 +415,18 @@
                 display: block
                 margin: 0 auto 20px
 
-    .info 
+    .info
         padding: 90px 0
-        .container 
+        .container
             display: block
 
         .title
             margin-bottom: 25px
         .title,
-        img 
+        img
             width: 100%
 
-    .contacts 
+    .contacts
         overflow: hidden
         &__img
             height: 100vw
@@ -397,8 +437,23 @@
         &-title
             padding: 30px 30px 90px
 
-        h2 
+        h2
             margin-bottom: 18px
+
+    .article
+        padding: 100px 0
+        background-position: bottom center
+        .wrap
+            display: block
+
+        .col
+            width: 100% !important
+
+        .box
+            width: 94%
+            padding: 30px
+            display: block
+            margin: 0 auto 20px
 
 @media screen and (max-width: 639px)
     .main
@@ -494,3 +549,17 @@
     .ditails
         &__text
             font-size: 16px
+
+    .article
+        padding: 80px 0
+        .wrap
+            display: block
+
+        .col
+            width: 100% !important
+
+        p 
+            font-size: 14px
+
+        .box
+            padding: 25x
