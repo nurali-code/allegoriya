@@ -8,7 +8,7 @@
     <title>Аллегория - профессиональные юридические и бухгалтерские услуги в Алмате</title>
     <meta name="description"
         content="Мы предоставляем юридическое сопровождение и бухгалтерские услуги для бизнеса и частных лиц в Алматы уже более 15 лет. Наша команда квалифицированных юристов и бухгалтеров готова помочь вам в решении различных задач - от простых договоров до сложных многосторонних сделок. Мы гарантируем профессиональный и качественный сервис, который поможет организовать грамотную работу вашего бизнеса. С нами вы можете быть уверены в решении своей проблемы в 100% случаев. Обращайтесь к нам и получите оптимальное решение своих задач уже сегодня!">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?ver=1321">
 </head>
 
 <body>
@@ -100,9 +100,9 @@
         <div class="container">
             <h2>Мы поможем решить вашу проблему</h2>
             <p>В 100% дел мы уверены в решении и можем довести дело до конца</p>
-            <form action="#">
-                <input type="tel" placeholder="Номер телефона" required>
-                <input type="text" placeholder="ФИО" required>
+            <form action="sendmail.php" method="post" id="form">
+                <input type="tel" name="phone_number" placeholder="Номер телефона" required>
+                <input type="text" name="name" placeholder="ФИО" required>
                 <button class="btn btn-3">Получить бесплатную консультацию</button>
             </form>
             <p class="secure">Ваши данные в полной безопасности</p>
@@ -116,7 +116,7 @@
                 <a href="#"><img src="img/inst.svg" loading="lazy" alt="fb"></a>
             </div>
             <p>
-                Телефон: <a href="tel:+79293934589">+7 929 393-45-89</a> <br>
+                Телефон: <a href="tel:+77016180888">+7 701 618 0888</a> <br>
                 E-mail: <a href="mailto:allegoriya.too@mail.ru">allegoriya.too@mail.ru</a>
             </p>
         </div>
@@ -126,8 +126,8 @@
     <div class="wg">
         <div id="wg-content" class="wg-content">
             <a href="tel:+77016180888"><img src="img/phone.svg" alt="Телефон"></a>
-            <a href="skype:username?call" target="_blank"><img src="img/sk.svg" alt="Скайп"></a>
-            <a href="https://vk.me/username" target="_blank"><img src="img/vk.svg" alt="Вконтакте"></a>
+            <!-- <a href="skype:username?call" target="_blank"><img src="img/sk.svg" alt="Скайп"></a> -->
+            <!-- <a href="https://vk.me/username" target="_blank"><img src="img/vk.svg" alt="Вконтакте"></a> -->
             <a href="https://wa.me/77016180888" target="_blank"><img src="img/wa.svg" alt="Whatsapp"></a>
             <a href="https://t.me/allegoriya" target="_blank"><img src="img/tg.svg" alt="Телеграм"></a>
             <a href="mailto:allegoriya.too@mail.ru"><img src="img/email.svg" alt="Почта"></a>
@@ -176,6 +176,39 @@
             progressBar.style.width = `${progress}%`;
         });
 
+        function submitForm(url, formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const xhr = new XMLHttpRequest();
+
+                xhr.open('POST', url);
+
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                let formData = '';
+
+                inputs.forEach(input => {
+                    formData += `${input.name}=${input.value}&`;
+                });
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            alert('Спасибо, за заявку! Ожидайте с вами свяжется специалист!');
+                            form.reset(); // очистка формы
+                        } else {
+                            alert('Ошибка!');
+                        }
+                    }
+                };
+                xhr.send(formData);
+            });
+        }
+        submitForm('sendmail.php', 'form');
     </script>
 
 </body>
