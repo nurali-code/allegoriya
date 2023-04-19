@@ -8,14 +8,52 @@
     <title>Аллегория - профессиональные юридические и бухгалтерские услуги</title>
     <meta name="description"
         content="Мы предоставляем юридическое сопровождение и бухгалтерские услуги для бизнеса и частных лиц уже более 15 лет. Наша команда квалифицированных юристов и бухгалтеров готова помочь вам в решении различных задач - от простых договоров до сложных многосторонних сделок. Мы гарантируем профессиональный и качественный сервис, который поможет организовать грамотную работу вашего бизнеса. С нами вы можете быть уверены в решении своей проблемы в 100% случаев. Обращайтесь к нам и получите оптимальное решение своих задач уже сегодня!">
-    <link rel="stylesheet" href="./css/style.css?ver=91011">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="./css/style.css?ver=111213">
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="container wrap">
+            <a href="./index.html" class="logo"><img src="./img/logo.png" alt="Логотип Аллегория"></a>
+            <ul class="nav wrap" id="navbar">
+                <li><a href="./accounting.html">Бухгалтерские услуги</a></li>
+                <li><a href="./low.html">Юридические услуги</a></li>
+                <li class="hidden">
+                    <a href="tel:79293934589" class="phone">
+                        <span>Телефон:</span>
+                        <b>+7 929 393-45-89</b>
+                    </a>
+                </li>
+                <li class="hidden">
+                    <a href="mailto:allegoriya.too@mail.ru" class="phone">
+                        <span>Наша почта:</span>
+                        <b>allegoriya.too@mail.ru</b>
+                    </a>
+                </li>
+            </ul>
+            <a href="mailto:allegoriya.too@mail.ru" class="phone top">
+                <span>Наша почта:</span>
+                <b>allegoriya.too@mail.ru</b>
+            </a>
+            <a href="tel:79293934589" class="phone">
+                <span>Телефон для справок:</span>
+                <b>+7 929 393-45-89</b>
+            </a>
+            <button class="btn-menu" id="menuBtn"><span></span></button>
+        </div>
+    </header>
 
     <main class="main second">
         <div class="container">
-            <a href="./index.html" class="logo"><img src="./img/logo.png" alt="Логотип Аллегория"></a>
             <p class="main__descr">Работаем уже более 15 лет</p>
             <h1>Вы уделяете все внимание бизнесу, а компетентные люди сводят баланс и отчитываются в налоговую</h1>
             <div class="row">
@@ -100,9 +138,9 @@
         <div class="container wrap">
             <div class="title">
                 <p>
-                    Компания по предоставлению профессиональных бухгалтерских, юридических, консалтинговых услуг,
-                    работающая по международным стандартам качества, для организаций любого масштаба, осуществляющая
-                    свою деятельность на территории РФ и странах ЕС, широко использующая автоматизации бизнес и
+                    Компания по предоставлению профессиональных бухгалтерских, юридических услуг, работающая по
+                    международным стандартам качества, для организаций любого масштаба, осуществляющая
+                    свою деятельность на территории РФ и странах ЕАЭС, широко использующая автоматизации бизнес и
                     операционных процессов, что позволяет оказывать услуги по доступной цене.
                 </p>
             </div>
@@ -214,8 +252,7 @@
             <a href="./index.html" class="logo"><img src="./img/logo.png" alt="Логотип Аллегория"></a>
             <div class="col">
                 <p><b>Адрес офиса:</b></p>
-                <address> Республика Казахстан, город Алматы, бульвар Бухар Жирау, 26/1 офис 49 БЦ Evaluation,
-                    050021 </address>
+                <address>Алтайский край, г.Барнаул ул. Взлетная, 33, корпус 5, офис 401</address>
             </div>
         </div>
         <div class="developt">
@@ -227,10 +264,10 @@
 
     <div class="wg">
         <div id="wg-content" class="wg-content">
-            <a href="tel:+79293934589"><img src="img/phone.svg" alt="Телефон"></a>
+            <a href="tel:+79293934589 "><img src="img/phone.svg" alt="Телефон"></a>
             <!-- <a href="skype:username?call" target="_blank"><img src="img/sk.svg" alt="Скайп"></a> -->
             <!-- <a href="https://vk.me/username" target="_blank"><img src="img/vk.svg" alt="Вконтакте"></a> -->
-            <a href="https://wa.me/79293934589" target="_blank"><img src="img/wa.svg" alt="Whatsapp"></a>
+            <a href="https://wa.me/79293934589 " target="_blank"><img src="img/wa.svg" alt="Whatsapp"></a>
             <a href="https://t.me/allegoriya" target="_blank"><img src="img/tg.svg" alt="Телеграм"></a>
             <a href="mailto:allegoriya.too@mail.ru"><img src="img/email.svg" alt="Почта"></a>
         </div>
@@ -238,82 +275,50 @@
     </div>
 
     <script>
+        const menuBtn = document.querySelector('#menuBtn');
+        const header = document.querySelector('#header');
+        const body = document.body;
+        menuBtn.addEventListener('click', () => [menuBtn, header, body].forEach(el => el.classList.toggle('active')));
+
         const wgBtn = document.querySelector('#wg-btn');
         const wgContent = document.querySelector('#wg-content');
-        wgBtn.addEventListener('click', () => {
-            wgContent.classList.toggle('active');
-            wgBtn.classList.toggle('active');
-        })
+        wgBtn.addEventListener('click', () => [wgContent, wgBtn].forEach(el => el.classList.toggle('active')));
 
-        const dropdownItems = document.querySelectorAll('.dropdown');
-        dropdownItems.forEach(item => {
+        document.querySelectorAll('.dropdown').forEach(item => item.querySelector('.dropdown-btn').addEventListener('click', () => {
+            document.querySelectorAll('.dropdown').forEach(otherItem => otherItem !== item && otherItem.querySelector('.dropdown-btn').classList.remove('active') && otherItem.querySelector('.dropdown-content').classList.remove('active'));
             const btn = item.querySelector('.dropdown-btn');
             const content = item.querySelector('.dropdown-content');
-            btn.addEventListener('click', () => {
-                // Закрываем все панели аккордеона
-                dropdownItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.querySelector('.dropdown-btn').classList.remove('active');
-                        otherItem.querySelector('.dropdown-content').classList.remove('active');
-                    }
-                });
-                // Открываем или закрываем панель аккордеона
-                btn.classList.toggle('active');
-                content.classList.toggle('active');
-            });
-        });
+            btn.classList.toggle('active');
+            content.classList.toggle('active');
+        }));
 
-        // Получаем высоту документа и видимую высоту окна
-        const documentHeight = document.documentElement.scrollHeight;
-        const windowHeight = window.innerHeight;
-
-        // Определяем начальное значение полосы прогресса
-        let progressBar = document.getElementById('progress-bar');
-        progressBar.style.width = '0%';
-
-        // Обновляем значение полосы прогресса при прокрутке
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
-            progressBar.style.width = `${progress}%`;
-        });
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => progressBar.style.width = `${(window.pageYOffset || document.documentElement.scrollTop) / (document.documentElement.scrollHeight - window.innerHeight) * 100}%`);
 
         function submitForm(url, formId) {
             const form = document.getElementById(formId);
-            const inputs = form.querySelectorAll('input');
-
-            form.addEventListener('submit', function (event) {
+            form.addEventListener('submit', event => {
                 event.preventDefault();
-
                 const xhr = new XMLHttpRequest();
-
                 xhr.open('POST', url);
-
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-                let formData = '';
-
-                inputs.forEach(input => {
-                    formData += `${input.name}=${input.value}&`;
-                });
-
-                xhr.onreadystatechange = function () {
+                xhr.onreadystatechange = () => {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 200) {
                             alert('Спасибо, за заявку! Ожидайте с вами свяжется специалист!');
-                            form.reset(); // очистка формы
+                            form.reset();
                         } else {
                             alert('Ошибка!');
                         }
                     }
                 };
-
-                xhr.send(formData);
+                xhr.send([...form.querySelectorAll('input')].map(input => `${input.name}=${input.value}`).join('&'));
             });
         }
         submitForm('sendmail.php', 'form');
 
     </script>
+
 
 
 </body>

@@ -21,6 +21,8 @@ body
     background-color: #111111
     font-family: 'Montserrat', sans-serif
     scroll-behavior: smooth
+    &.active 
+        overflow: hidden
 
 h1,h2,h3,h4,h5,h6
     font-family: 'Montserrat',Arial,sans-serif
@@ -107,7 +109,7 @@ section
         display: inline-block
         position: relative
         width: 50px
-        height: 45px
+        height: 50px
         margin: 0
         span
             position: absolute
@@ -116,7 +118,7 @@ section
             margin-top: -2px
             display: block
             width: 80%
-            height: 1.4px
+            height: 1px
             transition: all ease .3s
             border-radius: 2px
             background-color: #fff
@@ -244,10 +246,26 @@ select
 
 .logo
     display: inline-block
-    max-width: 200px
+    max-width: 150px
     margin-bottom: 20px
-    img 
+    img
         display: block
+
+.phone
+    display: inline-block
+    text-align: left
+    vertical-align: middle
+    span
+        font-weight: 400
+        font-size: 16px
+        line-height: 130%
+        display: block
+    b
+        font-weight: 600
+        font-size: 22px
+        color: $second
+        line-height: 130%
+
 .dropdown
     background-color: #fff
     color: #000
